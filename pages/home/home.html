@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Appliance Installment Plan Calculator App</h2>
+  <p>
+    This app uses the price of your chosen appliance, and the length of your repayment to calculate you downpayment amount, total loan amount, and your monthly payment.
+  </p>
+  <p>
+    Input below your details!
+  </p>
+
+  <ion-item>
+    <ion-label>Appliance Price: </ion-label>
+    <ion-input type="number" [(ngModel)]= "price" ></ion-input>
+  </ion-item>
+
+    <ion-item>
+    <ion-label>Length of Repayment: </ion-label>
+    <ion-input type="number" [(ngModel)]= "months" ></ion-input>
+  </ion-item>
+
+<br />
+
+  <button ion-button color= "light" (click)="calculateDA ()">CALCULATE DOWNPAYMENT AMOUNT
+</button>
+
+  <ion-item *ngIf="da">
+    <h2> Downpayment Amount: {{da}} Pesos </h2>
+  </ion-item>
+
+<br />
+
+<button ion-button color= "light" (click)="calculateLA ()">CALCULATE TOTAL LOAN AMOUNT
+</button>
+
+  <ion-item *ngIf="la">
+    <h2> Total Loan Amount: {{la}} Pesos </h2>
+  </ion-item>
+
+<br />
+
+<button ion-button color= "light" (click)="calculateTIP ()">CALCULATE TOTAL  INTEREST PAYABALE
+</button>
+
+  <ion-item *ngIf="tip">
+    <h2> Total Interest Payable: {{tip}} Pesos </h2>
+  </ion-item>
+
+<button ion-button color= "light" (click)="calculateMA ()">CALCULATE MONTHLY  AMOUNT
+</button>
+
+  <ion-item *ngIf="ma">
+    <h2> Monthly Amount: {{ma}} Pesos </h2>
+  </ion-item>
